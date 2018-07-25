@@ -1,5 +1,6 @@
 import { AuthorsService } from './authors.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 
@@ -19,7 +20,8 @@ import { AuthorComponent } from './author/author.component';
     AuthorComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [CoursesService, AuthorsService],
   bootstrap: [AppComponent]
