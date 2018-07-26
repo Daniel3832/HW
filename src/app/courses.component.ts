@@ -28,12 +28,39 @@ import { Component } from '@angular/core';
             <button (click)="onSave($event)">Save</button>
         </div>
 
-        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" /><br><br>
         
+        <div>
+            <p>
+                {{ course.title }} <br>
+                {{ course.students | number }} <br>
+                {{ course.rating | number: '3.3-3'}} <br>
+                {{ course.price | currency: 'AUD': false: '3.3-3' }} <br>
+                {{ course.releaseDate | date: 'shortDate' }} <br>
+            </p>
+        </div>
+
+        {{ text | summary:10 }}
     `
 })
 
 export class CoursesComponent {
+    text = `
+    Angular is a platform and framework for building client applications in HTML and TypeScript. Angular is itself written in TypeScript. It implements core and optional functionality as a set of TypeScript libraries that you import into your apps.
+    The basic building blocks of an Angular application are NgModules, which provide a compilation context for components. NgModules collect related code into functional sets; an Angular app is defined by a set of NgModules. An app always has at least a root module that enables bootstrapping, and typically has many more feature modules.
+    `
+
+    course = {
+        title: "The Complete Angular Course",
+        rating: 4.9745,
+        students: 30123,
+        price:190.95,
+        releaseDate: new Date(2016, 3, 1)
+    }
+    
+
+
+
     title = "Angular";
     courses;
     imageUrl = "https://lonelyplanetimages.imgix.net/mastheads/GettyImages-538096543_medium.jpg?sharp=10&vib=20&w=1200"

@@ -9,6 +9,8 @@ import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
 import { AuthorComponent } from './author/author.component';
+import { SummaryPipe } from './summary.pipe';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 
 
@@ -18,6 +20,8 @@ import { AuthorComponent } from './author/author.component';
     CoursesComponent,
     CourseComponent,
     AuthorComponent,
+    SummaryPipe,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,
